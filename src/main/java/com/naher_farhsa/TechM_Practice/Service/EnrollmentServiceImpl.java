@@ -1,6 +1,8 @@
 package com.naher_farhsa.TechM_Practice.Service;
 
 import com.naher_farhsa.TechM_Practice.entity.Enrollment;
+import com.naher_farhsa.TechM_Practice.repository.EnrollmentRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,8 +10,11 @@ import java.util.List;
 @Service
 public class EnrollmentServiceImpl implements EnrollmentService {
 
-    public int insertEnrollment(Enrollment s) {
-        return 0;
+    @Autowired
+    private EnrollmentRepo enrollmentRepo;
+    public int insertEnrollment(Enrollment e) {
+        enrollmentRepo.save(e);
+        return 1;
     }
     public int updateEnrollment(Enrollment s, String id,String cid) {
         return 0;

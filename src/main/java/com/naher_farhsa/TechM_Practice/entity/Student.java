@@ -20,11 +20,8 @@ public class Student {
     private String sName;
     @Id
     private String sId;
-
     private String sAddress;
-    @OneToOne(
-            mappedBy="cStudent"
-    )
+    @ManyToOne()
     private Course sCourse;
     private String sYear;
 }

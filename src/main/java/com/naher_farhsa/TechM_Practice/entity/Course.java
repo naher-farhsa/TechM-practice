@@ -3,6 +3,7 @@ package com.naher_farhsa.TechM_Practice.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,7 +23,7 @@ public class Course {
     private String cTitle;
     private int  cCredit;
     private String cType;
-    @ManyToOne()
+    @OneToMany(mappedBy = "sCourse")
     private List<Student>cStudent;
 
 }
